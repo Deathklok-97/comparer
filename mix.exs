@@ -44,7 +44,8 @@ defmodule Comparer.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:remix, "~> 0.0.2"},
-      {:plug, "~> 1.13"}
+      {:plug, "~> 1.13"},
+      {:map_diff, "~> 1.3"}
     ]
   end
 

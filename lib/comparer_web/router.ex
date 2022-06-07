@@ -26,6 +26,7 @@ defmodule ComparerWeb.Router do
     pipe_through :api
 
     post "track", PageController, :track
+    get "track", PageController, :compare
   end
 
   # Enables LiveDashboard only for development

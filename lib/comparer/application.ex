@@ -9,6 +9,8 @@ defmodule Comparer.Application do
     children = [
       # Start the Telemetry supervisor
       ComparerWeb.Telemetry,
+      Supervisor.child_spec({RequestTracker, "1"}, id: :version_1),
+      Supervisor.child_spec({RequestTracker, "2"}, id: :version_2),
       # Start the PubSub system
       {Phoenix.PubSub, name: Comparer.PubSub},
       # Start the Endpoint (http/https)
