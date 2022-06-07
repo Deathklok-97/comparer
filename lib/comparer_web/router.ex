@@ -11,12 +11,14 @@ defmodule ComparerWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug Comparer.Plugs.SetVersion
   end
 
   scope "/", ComparerWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+
   end
 
   # Other scopes may use custom stacks.

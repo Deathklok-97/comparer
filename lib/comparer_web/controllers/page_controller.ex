@@ -5,10 +5,14 @@ defmodule ComparerWeb.PageController do
     render(conn, "index.html")
   end
 
+  def track(conn, params) do
 
-  def track(conn, _params) do
+    IO.inspect(conn.assigns, label: "conn assigns")
 
 
-    
+    conn
+    |> put_status(:ok)
+    |> json(params)
+
   end
 end

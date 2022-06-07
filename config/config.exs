@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :comparer,
-  ecto_repos: [Comparer.Repo]
-
 # Configures the endpoint
 config :comparer, ComparerWeb.Endpoint,
   url: [host: "localhost"],

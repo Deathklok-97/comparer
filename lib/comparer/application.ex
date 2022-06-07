@@ -7,8 +7,6 @@ defmodule Comparer.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      Comparer.Repo,
       # Start the Telemetry supervisor
       ComparerWeb.Telemetry,
       # Start the PubSub system
