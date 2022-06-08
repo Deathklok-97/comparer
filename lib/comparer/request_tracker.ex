@@ -1,7 +1,7 @@
 defmodule RequestTracker do
   use GenServer
 
-  def start_link(version \\ "1") do
+  def start_link(version) do
     GenServer.start_link(__MODULE__, {:ok, version}, name: :"version_#{version}")
   end
 
@@ -17,7 +17,7 @@ defmodule RequestTracker do
     GenServer.call(pid, :reset)
   end
 
-  def init(version) do
+  def init({:ok, version}) do
     {:ok, %{:version => version}}
   end
 
@@ -34,7 +34,7 @@ defmodule RequestTracker do
   def handle_call(:reset, _from, state) do
     new_state = Map.take(state, [:version])
 
-  {:noreply, new_state}
+  {:reply, new_state, new_state}
   end
 
 end

@@ -27,6 +27,7 @@ defmodule ComparerWeb.Router do
 
     post "track", PageController, :track
     get "track", PageController, :compare
+    delete "track", PageController, :reset
   end
 
   # Enables LiveDashboard only for development
