@@ -11,7 +11,7 @@ defmodule Comparer.Plugs.SetVersion do
       [version] when version in @versions -> version
       _ -> default_version
     end
-    IO.inspect(version, label: "plug ver")
+
     assign(conn, :version, version)
   end
 end
